@@ -1,4 +1,4 @@
-from RecursiveLeveDist import dstrc as dist
+from IterativeLeveDist import dist
 
 def cfn(a,b):
     a=a.split(" ")
@@ -17,4 +17,6 @@ with open('1.csv','r') as f:
         
 for i in range(1,records):
     for j in range(i+1,records):
-        print data[i][0]," ",data[j][0],"->",cfn(data[i][0],data[j][0])
+        dis=cfn(data[i][0],data[j][0])
+        if dis<7:
+            print data[i][0]," ",data[j][0],"->",cfn(data[i][0],data[j][0])
